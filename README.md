@@ -59,12 +59,18 @@ Run the script
 ## Results
 
 **PageRank scores and rankings**
+*PageRank Scores:* [0.15789473684210537, 0.21052631578947376, 0.31578947368421045, 0.31578947368421045]
+*Highest ranked page:* 3
 
-**Regression coefficients and predicted price**
+
+***Regression coefficients and predicted price**
+Regression Coefficients:* [3.287500000000088, -1628.7500000000448, -77.75000000000227]
+*Predicted Price for new house:* 1448.750000000031
+
 
 **Final loss value**
+*Final Loss Value:* 0.0
 
 **Visualization of PCA results**
-
 ![PCA_Resuls](results/pca_plot.png)
 
