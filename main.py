@@ -105,17 +105,21 @@ def linear_regression():
 def gradient_descent():
     print("Running Gradient Descent...")
     
-    # Initialize random matrices
     np.random.seed(0)
     A = np.random.rand(100, 50)
     X = np.random.rand(100, 50)
     
-    # Loss function
+    # Track loss values
+    loss_values = []
+    
+    # Define the loss function
     def loss_fn(X_flat):
         X_matrix = X_flat.reshape(100, 50)
-        return 0.5 * np.sum((X_matrix - A) ** 2)
+        loss = 0.5 * np.sum((X_matrix - A) ** 2)
+        loss_values.append(loss)  # Track the loss at each iteration
+        return loss
     
-    # Gradient of the loss function
+    # Define the gradient of the loss function
     def grad_fn(X_flat):
         X_matrix = X_flat.reshape(100, 50)
         return (X_matrix - A).flatten()
@@ -126,8 +130,22 @@ def gradient_descent():
         x0=X.flatten(),
         jac=grad_fn,
         method='CG',
-        options={'disp': False, 'maxiter': 1000}
+        options={'disp': True, 'maxiter': 1000}
     )
+    
+    # Plot the loss values
+    plt.figure()
+    plt.plot(loss_values, label="Loss Value")
+    plt.xlabel("Iteration")
+    plt.ylabel("Loss")
+    plt.title("Loss Value Over Iterations")
+    plt.legend()
+    plt.savefig("results/loss_plot.png")  # Save the plot
+    plt.show()
+    
+    print("Gradient descent results saved to results/gradient_descent_results.txt")
+    print("Loss plot saved to results/loss_plot.png")
+    print()
     
     # Save results to a file
     with open("results/gradient_descent_results.txt", "w") as file:
