@@ -137,6 +137,37 @@ The final loss value after optimization is:
     \label{fig:pca}
     \end{figure}
 
+\section{Comparison in linear regression: Least squares v/s Direct Method}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{results/linear_regression_comparison_plot.png}
+    \caption{Least Squares v/s Direct Method}
+    \label{fig:pca}
+    \end{figure}
+
+    \subsection{Comparison with the Direct Method}
+
+    An alternative approach is to solve the normal equations 
+    \[
+    (X^T X) \beta = X^T y
+    \]
+    directly using \texttt{scipy.linalg.solve}. While this method provides the same result in ideal conditions, there are key differences:
+    
+    \subsubsection{Numerical Stability}
+    \begin{itemize}
+        \item The least-squares method (\texttt{scipy.linalg.lstsq}) is more numerically stable because it avoids explicitly computing $X^T X$, which can lead to loss of precision for ill-conditioned matrices.
+        \item The direct method may fail or yield inaccurate results if $X^T X$ is close to singular.
+    \end{itemize}
+    
+    \subsubsection{Efficiency}
+    \begin{itemize}
+        \item For small datasets like the one in this task, both methods are computationally efficient.
+        \item For larger datasets, \texttt{scipy.linalg.lstsq} is often preferred as it leverages advanced techniques like QR decomposition.
+    \end{itemize}
+    
+    \subsubsection{Results Comparison}
+    In this task, both methods yield similar regression coefficients and predictions because $X^T X$ is not ill-conditioned. The predicted price for a house with 2400 square feet, 3 bedrooms, and 20 years old is consistent across methods.
+    
 \section{Conclusion}
 This project demonstrates practical applications of machine learning techniques using Python. The results are stored for reproducibility and further analysis. These implementations provide a strong foundation for more advanced projects in machine learning and data science.
 

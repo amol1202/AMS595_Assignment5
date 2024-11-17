@@ -79,6 +79,10 @@ Run the script
 
 *Final Loss Value:* `0.0`
 
+- **Regression comparison: Least Squares v/s Direct Method**
+
+![Comparison](results/linear_regression_comparison_plot.png)
+
 - **Visualization of PCA results**
 
 ![PCA_Resuls](results/pca_plot.png)
