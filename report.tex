@@ -2,7 +2,7 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage{geometry}
+\usepackage{geometry,float}
 \geometry{a4paper, margin=1in}
 
 \title{\textbf{AMS595 - Assignment-5}\\ \large Machine Learning Project}
@@ -103,10 +103,17 @@ The regression coefficients and predictions are:
 \end{itemize}
 
 \subsection{Gradient Descent}
+    
 The final loss value after optimization is:
 \[
-\text{Final Loss Value: } 0.00123
+\boxed{\text{Final Loss Value: } 0.00123}
 \]
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{results/loss_plot.png}
+    \caption{Loss over iterations}
+    \label{fig:pca}
+    \end{figure}
 
 \section{Conclusion}
 This project demonstrates practical applications of machine learning techniques using Python. The results are stored for reproducibility and further analysis. These implementations provide a strong foundation for more advanced projects in machine learning and data science.

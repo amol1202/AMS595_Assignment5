@@ -71,6 +71,9 @@ Run the script
 
 *Predicted Price for new house:* `1448.750000000031`
 
+- **Loss values v/s iterations**
+
+![Loss_Resuls](results/loss_plot.png)
 
 - **Final loss value**
 
