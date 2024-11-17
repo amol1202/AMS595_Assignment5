@@ -1,3 +1,5 @@
+# Amol Arora, SBUID: 116491705
+
 import os
 import numpy as np
 from scipy.linalg import eig, lstsq

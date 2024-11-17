@@ -86,14 +86,36 @@ Page & PageRank Score \\ \hline
 \end{table}
 
 \subsection{PCA}
-Figure~\ref{fig:pca} shows the original data and the 1D projection onto the principal component.
+Figure shows the original data and the 1D projection onto the principal component.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{results/pca_plot.png}
 \caption{PCA: Dimensionality Reduction}
 \label{fig:pca}
 \end{figure}
+
+\textbf{\underline{What do the entries of the eigenvector represent?}} $\longrightarrow$
+In the context of the \textit{PageRank algorithm}, the entries of the eigenvector represent the \textbf{relative importance or rank} of each page in the network. The PageRank algorithm uses the concept of a stochastic matrix where each entry \( M[i, j] \) indicates the probability that a user will click from page \( j \) to page \( i \).
+
+When the algorithm computes the \textit{dominant eigenvector} of this matrix, it corresponds to the \textbf{stationary distribution} of a random surfer who randomly clicks through the web network. This means that the eigenvector provides a ranking of pages based on the probability that the random surfer will be on each page in the long run.
+
+Each entry in the eigenvector gives the \textbf{PageRank score} for a corresponding web page. The higher the score, the more ``important'' or ``relevant'' that page is, according to the algorithm. These scores are used to rank the web pages in descending order of importance.
+
+\textbf{\underline{Which page is ranked the highest, why?}} $\longrightarrow$
+Based on the final PageRank scores, \textbf{Page 3} is ranked the highest in this particular example. The reason is that the PageRank algorithm assigns a higher score to pages that are:
+\begin{itemize}
+    \item Linked to by many other pages, or
+    \item Connected to pages that themselves have high importance.
+\end{itemize}
+
+In this case:
+\begin{itemize}
+    \item Page 3 has the highest PageRank score, which means it is either linked to by many other pages or is connected to important pages in the network.
+    \item The random surfer is more likely to land on Page 3 over time, as the probability distribution over all pages eventually converges to it, indicating its higher ``importance.''
+\end{itemize}
+
+In simple terms, \textbf{Page 3} is considered the most important page in the network because of its connections and the flow of probability through the web structure represented by the matrix.
 
 \subsection{Linear Regression}
 The regression coefficients and predictions are:
