@@ -1,0 +1,2 @@
+Regression Coefficients: [3.287500000000088, -1628.7500000000448, -77.75000000000227]
+Predicted Price for new house: 1448.750000000031
